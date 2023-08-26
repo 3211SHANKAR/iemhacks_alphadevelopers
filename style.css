@@ -1,138 +1,209 @@
-/* Reset default margin and padding */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Basic styling */
-  body {
-    /*font-family: 'Bricolage Grotesque', sans-serif;*/
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  h1, h2, h3 {
-    font-family: 'Bricolage Grotesque', sans-serif;
-  }
-h1{
-    font-weight: 600;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+  /*font-family: 'Bricolage Grotesque', sans-serif;*/
+  font-family: 'Poppins', sans-serif;
+  background: rgb(108, 255, 147);
+  background: linear-gradient(180deg, rgba(108, 255, 147, 1) 0%, rgba(213, 252, 219, 1) 15%, rgba(255, 255, 255, 1) 100%);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+a,
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
 }
 
 .flex {
-    display: flex;
+  display: flex;
+  align-items: center;
 }
 
-.max{
-    max-width: 1250px;
+.max {
+  max-width: 1250px;
+  margin: auto;
 }
 
-  nav ul {
-    list-style: none;
-    display: flex;
-    background-color: #333;
-    padding: 10px;
-  }
-  
-  nav a {
-    color: white;
-    text-decoration: none;
-    margin-right: 20px;
-  }
-  
-  .intro {
-    text-align: center;
-    padding: 50px;
-    background-color: #f7f7f7;
-  }
-  
- 
-  /* Examples Section */
+/* Nav Bar */
 
-.examples {
-    /* margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
+.btn {
+  /* width: 9em; */
+  width: fit-content;
+  background-color: #008200;
+  /* border-radius: 30em; */
+  padding: 5px;
+  height: 3em;
+  border-radius: 30em;
+  font-size: 15px;
+  font-family: inherit;
+  background-color: #008200;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #019228,
+    -6px -6px 12px #b5ffc8;
+}
+
+.btn::before {
+  content: '';
+  width: 0;
+  height: 3em;
+  /* border-radius: 30em; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  width: 9em;
+}
+
+nav {
+  height: 80px;
+  display: block;
+  padding-block: 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 10px;
+  justify-content: space-around;
+  margin-block: 20px;
+  margin: 50px;
+}
+
+.navli {
+  width: fit-content;
+  background-color: #008200 !important;
+  /* border-radius: 30em; */
+  padding: 5px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  /* margin-right: 20px; */
+}
+
+nav a:hover{
+  color: black;
+}
+
+/* Intro Section */
+.intro {
+  text-align: center;
+  padding: 50px;
+  /* background-color: #f7f7f7; */
+}
+
+#home>h1 {
+  color: rgb(0, 63, 0);
 }
 
 .examples h1 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .header-container {
-    text-align: center;
+  text-align: center;
 }
 
 .imgcardcont {
-    justify-content: space-between;
-    align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .img-card {
-    width: 23%;
-    position: relative;
-    height: 300px;
-    background-color: black;
-    background: linear-gradient(rgb(0,0,0,0.2), rgb(0,0,0,0.8)), url(https://assets.entrepreneur.com/content/3x2/2000/1634290910-ricke-76-LiFawPE9T8I-unsplash.jpg);
-    background-size: cover;
+  width: 23%;
+  position: relative;
+  height: 300px;
+  background-color: black;
+  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.8)), url(https://assets.entrepreneur.com/content/3x2/2000/1634290910-ricke-76-LiFawPE9T8I-unsplash.jpg);
+  background-size: cover;
 }
+
 .imgcardcont :nth-child(2) {
-    background: linear-gradient(rgb(0,0,0,0.2), rgb(0,0,0,0.8)), url(https://img.freepik.com/premium-photo/pesticidespraying-tractor_410516-14598.jpg);
-    background-size: cover;
+  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.8)), url(https://img.freepik.com/premium-photo/pesticidespraying-tractor_410516-14598.jpg);
+  background-size: cover;
 }
+
 .imgcardcont :nth-child(3) {
-    background: linear-gradient(rgb(0,0,0,0.2), rgb(0,0,0,0.8)), url(https://t4.ftcdn.net/jpg/03/57/54/77/360_F_357547735_aTZvm1ec8Uzgsd1aTukmFiOw4iXX2aKS.jpg);
-    background-size: cover;
+  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.8)), url(https://t4.ftcdn.net/jpg/03/57/54/77/360_F_357547735_aTZvm1ec8Uzgsd1aTukmFiOw4iXX2aKS.jpg);
+  background-size: cover;
 }
+
 .imgcardcont :nth-child(4) {
-    background: linear-gradient(rgb(0,0,0,0.2), rgb(0,0,0,0.8)), url(https://wallpapercave.com/wp/wp1886351.jpg);
-    background-size: cover;
+  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.8)), url(https://wallpapercave.com/wp/wp1886351.jpg);
+  background-size: cover;
 }
-.img-card a{
-   position: absolute;
-   left: 20px;
-   right: 20px;
-   bottom: 20px;
-   color: white;
+
+.img-card a {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  color: white;
 }
-  .crops {
-    text-align: center;
-    padding: 30px;
-  }
-  
-  .contact {
-    text-align: center;
-    padding: 50px;
-    background-color: #f7f7f7;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  footer {
-    text-align: center;
-    background-color: #333;
-    color: white;
-    padding: 10px;
-  }
-  
+
+.crops {
+  text-align: center;
+  padding: 30px;
+}
+
+.contact {
+  text-align: center;
+  padding: 50px;
+  background-color: #f7f7f7;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
