@@ -39,35 +39,47 @@ p {
   margin: auto;
 }
 
+::selection {
+  background: yellow;
+}
+
 /* Nav Bar */
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
 
 .btn {
-  /* width: 9em; */
-  width: fit-content;
-  background-color: #008200;
-  /* border-radius: 30em; */
+  width: 9em;
   padding: 5px;
   height: 3em;
   border-radius: 30em;
   font-size: 15px;
   font-family: inherit;
-  background-color: #008200;
   border: none;
   position: relative;
   overflow: hidden;
   z-index: 1;
-  box-shadow: 6px 6px 12px #019228,
-    -6px -6px 12px #b5ffc8;
+  text-align: center;
+  background-color: transparent !important;
+  /* box-shadow: 6px 6px 12px #019228, */
+  /* -6px -6px 12px #b5ffc8; */
 }
 
 .btn::before {
   content: '';
   width: 0;
   height: 3em;
-  /* border-radius: 30em; */
   position: absolute;
+  text-align: center;
+  border-radius: 20em;
   top: 0;
   left: 0;
+  color: black;
   background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
   transition: .5s ease;
   display: block;
@@ -75,38 +87,43 @@ p {
 }
 
 .btn:hover::before {
+  .btn>a {
+    color: black;
+  }
+
   width: 9em;
+  color: black;
 }
 
 nav {
   height: 80px;
   display: block;
   padding-block: 20px;
+  /* Gives padding/spacing from the above to the nav*/
 }
 
 nav ul {
   list-style: none;
   padding: 10px;
   justify-content: space-around;
-  margin-block: 20px;
-  margin: 50px;
+  align-items: center;
+  z-index: 1;
 }
 
-.navli {
-  width: fit-content;
-  background-color: #008200 !important;
-  /* border-radius: 30em; */
-  padding: 5px;
+.list {
+  background-image: linear-gradient(to right, #003805, #004f08, #006709, #027f06, #0d9900);
+  transition: .5s ease;
+  border: none;
+  border-radius: 20em;
+  justify-content: center;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 5px;
-  /* margin-right: 20px; */
+.list:hover {
+  background: rgb(0, 104, 28);
+  background: radial-gradient(circle, rgba(0, 104, 28, 1) 0%, rgba(44, 160, 62, 1) 53%, rgba(0, 184, 24, 1) 100%);
 }
 
-nav a:hover{
+nav a:hover {
   color: black;
 }
 
@@ -115,6 +132,7 @@ nav a:hover{
   text-align: center;
   padding: 50px;
   /* background-color: #f7f7f7; */
+  margin-block: 50px;
 }
 
 #home>h1 {
@@ -139,22 +157,36 @@ nav a:hover{
   position: relative;
   height: 300px;
   background-color: black;
-  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.8)), url(https://assets.entrepreneur.com/content/3x2/2000/1634290910-ricke-76-LiFawPE9T8I-unsplash.jpg);
+  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.8));
+  background-image: url("https://assets.entrepreneur.com/content/3x2/2000/1634290910-ricke-76-LiFawPE9T8I-unsplash.jpg");
   background-size: cover;
+  transform: scale(1);
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.img-card:hover {
+  -webkit-box-shadow: 10px 9px 123px -37px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 10px 9px 123px -37px rgba(0, 0, 0, 0.5);
+  box-shadow: 10px 9px 123px -37px rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
 }
 
 .imgcardcont :nth-child(2) {
-  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.8)), url(https://img.freepik.com/premium-photo/pesticidespraying-tractor_410516-14598.jpg);
+  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.8));
+  background-image: url(./assets/tractor.png);
   background-size: cover;
 }
 
 .imgcardcont :nth-child(3) {
-  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.8)), url(https://t4.ftcdn.net/jpg/03/57/54/77/360_F_357547735_aTZvm1ec8Uzgsd1aTukmFiOw4iXX2aKS.jpg);
+  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.8));
+  background-image: url(https://t4.ftcdn.net/jpg/03/57/54/77/360_F_357547735_aTZvm1ec8Uzgsd1aTukmFiOw4iXX2aKS.jpg);
   background-size: cover;
 }
 
 .imgcardcont :nth-child(4) {
-  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.8)), url(https://wallpapercave.com/wp/wp1886351.jpg);
+  background: linear-gradient(rgb(0, 0, 0, 0.2), rgb(0, 0, 0, 0.8));
+  background-image: url("https://wallpapercave.com/wp/wp1886351.jpg");
   background-size: cover;
 }
 
@@ -169,9 +201,97 @@ nav a:hover{
 .crops {
   text-align: center;
   padding: 30px;
+  margin-block: 50px;
 }
 
 .contact {
+  justify-content: center;
+}
+
+.innerForm {
+  flex-direction: column;
+  background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%);
+  margin: 20px;
+  padding: 0 50px 0px 50px;
+  border: none;
+  border-radius: 20px;
+}
+
+.innerForm>h2 {
+  font-size: 2em;
+  padding-top: 20px;
+}
+
+.innerForm>form {
+  flex-direction: column;
+  padding-block: 25px;
+  font-size: 1.5rem;
+}
+
+.formElem {
+  padding: 10px;
+  margin-block: 5px;
+  border: 1px solid rgb(0, 118, 32);
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+button {
+  font-family: inherit;
+  font-weight: bold;
+  color: white;
+  background-color: #171717;
+  margin-block: 6px;
+  padding: 1em 2em;
+  border: none;
+  border-radius: .6rem;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+button span:not(:nth-child(6)) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 30px;
+  width: 30px;
+  background-color: #0c66ed;
+  border-radius: 50%;
+  transition: .6s ease;
+}
+
+button span:nth-child(6) {
+  position: relative;
+}
+
+button span:nth-child(1) {
+  transform: translate(-3.3em, -4em);
+}
+
+button span:nth-child(2) {
+  transform: translate(-6em, 1.3em);
+}
+
+button span:nth-child(3) {
+  transform: translate(-.2em, 1.8em);
+}
+
+button span:nth-child(4) {
+  transform: translate(3.5em, 1.4em);
+}
+
+button span:nth-child(5) {
+  transform: translate(3.5em, -3.8em);
+}
+
+button:hover span:not(:nth-child(6)) {
+  transform: translate(-50%, -50%) scale(4);
+  transition: 1.5s ease;
+}
+
+/* .contact {
   text-align: center;
   padding: 50px;
   background-color: #f7f7f7;
@@ -190,16 +310,7 @@ textarea {
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
-}
-
-.btn {
-  background-color: #333;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+} */
 
 footer {
   text-align: center;
